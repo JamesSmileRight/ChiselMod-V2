@@ -1,0 +1,48 @@
+﻿..\maven\apache-maven-3.9.6\bin\mvn.cmd : WARNING: A restricted method in 
+java.lang.System has been called
+At line:1 char:79
++ ... build.log ; ..\maven\apache-maven-3.9.6\bin\mvn.cmd clean package -Ds ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: A rest...has been called 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING: java.lang.System::load has been called by 
+org.fusesource.jansi.internal.JansiLoader in an unnamed module (file:/C:/Users/
+James/OneDrive/Desktop/Mods%20For%20CSMP/maven/apache-maven-3.9.6/lib/jansi-2.4
+.0.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers 
+in this module
+WARNING: Restricted methods will be blocked in a future release unless native 
+access is enabled
+
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by 
+com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/C:/U
+sers/James/OneDrive/Desktop/Mods%20For%20CSMP/maven/apache-maven-3.9.6/lib/guav
+a-32.0.1-jre.jar)
+WARNING: Please consider reporting this to the maintainers of class 
+com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.beyondminer:KingdomsBounty >-------------------
+[INFO] Building KingdomsBounty 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ KingdomsBounty ---
+[INFO] Deleting C:\Users\James\OneDrive\Desktop\Mods For CSMP\ChiselMod\target
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.021 s
+[INFO] Finished at: 2026-03-23T20:18:34+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean (default-clean) on project KingdomsBounty: Failed to clean project: Failed to delete C:\Users\James\OneDrive\Desktop\Mods For CSMP\ChiselMod\target\test-classes -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

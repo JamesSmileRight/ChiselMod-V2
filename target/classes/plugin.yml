@@ -1,0 +1,307 @@
+name: KingdomsBounty
+version: 1.0.0
+main: com.beyondminer.leaderboards.BountyLeaderboards
+api-version: '1.21'
+author: BeyondMiner
+description: Unified kingdoms, bounties, and leaderboard system for Paper 1.21.1
+softdepend: [SkinsRestorer, ProtocolLib]
+
+commands:
+  kingdom:
+    description: Kingdom command
+    usage: /kingdom <create|invite|join|leave|chat|help> [args]
+    aliases: [k, kingdoms]
+    permission: kingdoms.command
+  kc:
+    description: Toggle kingdom chat
+    usage: /kc
+    permission: kingdoms.command
+  ally:
+    description: Kingdom alliance commands
+    usage: /ally <request|accept|remove|list> [kingdom]
+    aliases: [allies]
+    permission: kingdoms.command
+  bounty:
+    description: Bounty and hit request commands
+    usage: /bounty <place|check|top|contracts|hit|tags|help>
+    permission: bounty.command
+  leaderboard:
+    description: Leaderboard admin commands
+    usage: /leaderboard <setplayers|setkingdoms|remove <players|kingdoms|all>|refresh|reload>
+    permission: leaderboard.admin
+  chiselhelp:
+    description: Show the player KingdomsBounty command list
+    usage: /chiselhelp
+    permission: kingdomsbounty.help
+  chiselmod:
+    description: KingdomsBounty admin maintenance commands.
+    usage: /chiselmod reset [hard|seed-online]
+    permission: kingdomsbounty.admin.reset
+  lives:
+    description: Open your lives menu.
+    usage: /lives [revive|check|give|set] <player> [amount]
+    permission: chisellives.use
+  statue:
+    aliases: [statues, npcstatue, npcstatues, npcs]
+    description: Manage full-body shop and decorative statues.
+    usage: /statue <create|remove|list|movehere|pose|glow|rename|subtitle|skin|info>
+    permission: kingdomsbounty.statue.admin
+  war:
+    description: Kingdom war commands
+    usage: /war <declare|accept|end|list> [kingdom]
+    permission: war.command
+  sit:
+    description: Sit down on a temporary seat.
+    usage: /sit
+  craft:
+    description: Open a portable crafting table.
+    usage: /craft
+  enderchest:
+    aliases: [ec]
+    description: Open your ender chest.
+    usage: /enderchest
+  sethome:
+    description: Set a home.
+    usage: /sethome [name]
+  home:
+    description: Teleport to a home.
+    usage: /home [name]
+  delhome:
+    description: Delete a home.
+    usage: /delhome [name]
+  anvil:
+    description: Open a portable anvil.
+    usage: /anvil
+  cartographytable:
+    aliases: [cartography]
+    description: Open a portable cartography table.
+    usage: /cartographytable
+  stonecutter:
+    description: Open a portable stonecutter.
+    usage: /stonecutter
+  workbench:
+    description: Open a portable workbench.
+    usage: /workbench
+  grindstone:
+    description: Open a portable grindstone.
+    usage: /grindstone
+  loom:
+    description: Open a portable loom.
+    usage: /loom
+  spawnranksnpc:
+    description: Spawn the rank shop NPC using a player skin.
+    usage: /spawnranksnpc <skinname>
+    permission: chiselranks.admin.spawnnpc
+  spawnfly:
+    aliases: [spawnarea, spawnregion]
+    description: Set the two-corner cuboid used for spawn flight and spawn protection.
+    usage: /spawnfly <pos1|pos2|set|clear|info>
+    permission: chiselranks.admin.spawnregion
+  spawnbreak:
+    description: Toggle whether operators are blocked by spawn build protection.
+    usage: /spawnbreak <on|off|info>
+    permission: chiselranks.admin.spawnbreak
+  spawn:
+    description: Teleport to spawn after standing still for 5 seconds.
+    usage: /spawn
+  setspawn:
+    description: Set the exact spawn teleport point.
+    usage: /setspawn
+    permission: chiselranks.admin.spawnpoint
+  spawnhelp:
+    description: Show the spawn command list.
+    usage: /spawnhelp
+  staff:
+    description: Toggle staff mode.
+    usage: /staff [tp <player>]
+  staffhelp:
+    description: Show the staff command list.
+    usage: /staffhelp
+  vanish:
+    description: Toggle vanish.
+    usage: /vanish [on|off]
+  sc:
+    description: Send a staff chat message.
+    usage: /sc <message>
+  sctoggle:
+    description: Toggle staff chat.
+    usage: /sctoggle
+  freeze:
+    description: Freeze or unfreeze a player.
+    usage: /freeze <player>
+  tp:
+    description: Teleport to a player.
+    usage: /tp <player>
+  tphere:
+    description: Teleport a player to you.
+    usage: /tphere <player>
+  back:
+    description: Return to your previous location.
+    usage: /back
+  kick:
+    description: Kick a player.
+    usage: /kick <player> [reason]
+  ban:
+    description: Ban a player.
+    usage: /ban <player> [reason]
+  unban:
+    description: Unban a player.
+    usage: /unban <player>
+  invsee:
+    description: Open another player's inventory.
+    usage: /invsee <player>
+  ecsee:
+    description: Open another player's ender chest.
+    usage: /ecsee <player>
+  report:
+    description: Report a player.
+    usage: /report <player> <hacks|killaura|fly|xray|dupe|nbt|griefing|abuse|chat|bug|other> [details]
+  reports:
+    description: Open the staff reports menu.
+    usage: /reports
+  auditlog:
+    description: Open the staff audit log.
+    usage: /auditlog
+  announce:
+    description: Show a global announcement title and sound.
+    usage: /announce <message>
+  staffannounce:
+    description: Show a staff-only announcement title and sound.
+    usage: /staffannounce <message>
+  lockvillagers:
+    description: Toggle trade blocking for armourers and toolsmiths.
+    usage: /lockvillagers <on|off|status>
+  staffrtp:
+    description: Randomly teleport to an online player for investigations.
+    usage: /staffrtp
+  staffrole:
+    description: Set an internal staff role.
+    usage: /staffrole <player> <owner|admin|srmod|mod|helper|none>
+  rankhelp:
+    description: Show the rank perk command list.
+    usage: /rankhelp
+  statuehelp:
+    description: Show the statue command list.
+    usage: /statuehelp
+
+permissions:
+  kingdoms.command:
+    description: Allows using kingdom commands
+    default: true
+  bounty.command:
+    description: Allows using bounty commands
+    default: true
+  kingdomsbounty.help:
+    description: Allows using the KingdomsBounty help command
+    default: true
+  kingdomsbounty.admin.reset:
+    description: Allows resetting all KingdomsBounty data.
+    default: op
+  chisellives.use:
+    description: Allows opening the lives menu.
+    default: true
+  chisellives.admin:
+    description: Allows operator lives admin commands (/lives check|give|set).
+    default: op
+  kingdomsbounty.statue.admin:
+    description: Allows creating and managing full-body statues.
+    default: op
+  leaderboard.admin:
+    description: Allows leaderboard admin commands
+    default: op
+  war.command:
+    description: Allows using war commands
+    default: true
+  chiselranks.rank.gold:
+    description: Internal Gold rank permission.
+    default: false
+  chiselranks.rank.diamond:
+    description: Internal Diamond rank permission.
+    default: false
+  chiselranks.rank.netherite:
+    description: Internal Netherite rank permission.
+    default: false
+  chiselranks.perk.sit:
+    description: Allows the sit perk.
+    default: false
+  chiselranks.perk.craft:
+    description: Allows portable crafting.
+    default: false
+  chiselranks.perk.enderchest:
+    description: Allows portable ender chest access.
+    default: false
+  chiselranks.perk.chat.color:
+    description: Allows colored chat.
+    default: false
+  chiselranks.perk.message.join:
+    description: Allows custom join messages.
+    default: false
+  chiselranks.perk.message.leave:
+    description: Allows custom leave messages.
+    default: false
+  chiselranks.perk.message.death:
+    description: Allows custom death messages.
+    default: false
+  chiselranks.perk.trail.netherite:
+    description: Allows the Netherite particle trail.
+    default: false
+  chiselranks.admin.spawnregion:
+    description: Allows editing the spawn region used for spawn flight and protection.
+    default: op
+  chiselranks.admin.spawnbreak:
+    description: Allows toggling operator spawn-protection bypass.
+    default: op
+  chiselranks.admin.spawnpoint:
+    description: Allows updating the exact spawn teleport point.
+    default: op
+  chiselranks.admin.spawnnpc:
+    description: Allows spawning or moving the rank NPC.
+    default: op
+  chiselranks.perk.fly.spawn:
+    description: Allows spawn flight when the region requires Netherite.
+    default: false
+  chiselranks.perk.anvil:
+    description: Allows portable anvils.
+    default: false
+  chiselranks.perk.cartographytable:
+    description: Allows portable cartography tables.
+    default: false
+  chiselranks.perk.stonecutter:
+    description: Allows portable stonecutters.
+    default: false
+  chiselranks.perk.workbench:
+    description: Allows portable workbenches.
+    default: false
+  chiselranks.perk.grindstone:
+    description: Allows portable grindstones.
+    default: false
+  chiselranks.perk.loom:
+    description: Allows portable looms.
+    default: false
+  chiselranks.perk.home.3:
+    description: Allows three homes.
+    default: false
+  chiselranks.perk.home.5:
+    description: Allows five homes.
+    default: false
+  staff.helper:
+    description: Internal helper role.
+    default: false
+  staff.mod:
+    description: Internal mod role.
+    default: false
+  staff.announce.staff:
+    description: Allows sending staff-only announcements.
+    default: false
+  staff.announce.global:
+    description: Allows sending global announcements.
+    default: false
+  chiselranks.admin.villagerlock:
+    description: Allows toggling villager trade locks for armourers and toolsmiths.
+    default: op
+  staff.auditlog:
+    description: Allows viewing the staff audit log.
+    default: false
+  staff.rtp:
+    description: Allows random investigation teleports.
+    default: false

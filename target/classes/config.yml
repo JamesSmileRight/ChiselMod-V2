@@ -1,0 +1,273 @@
+database:
+  mode: mysql
+  sqlite-file: kingdomsbounty.db
+  host: srv1947.hstgr.io
+  port: 3306
+  database: u787705592_chiselmods
+  name: u787705592_chiselmods
+  username: u787705592_chisel
+  password: 'Allahuakbar2775123'
+
+bounty-database:
+  mode: mysql
+  sqlite-file: kingdomsbounty.db
+  host: srv1947.hstgr.io
+  port: 3306
+  database: u787705592_chiselmods
+  name: u787705592_chiselmods
+  username: u787705592_chisel
+  password: 'Allahuakbar2775123'
+  table-prefix: ""
+
+kingdoms-database:
+  mode: mysql
+  sqlite-file: kingdomsbounty.db
+  host: srv1947.hstgr.io
+  port: 3306
+  database: u787705592_chiselmods
+  name: u787705592_chiselmods
+  username: u787705592_chisel
+  password: 'Allahuakbar2775123'
+  table-prefix: ""
+
+chisel-lives:
+  starting-lives: 10
+  max-normal-lives: 10
+  max-lives: 15
+  revival-lives: 5
+  purchase-check-seconds: 10
+  store-url: "https://chiselcraft.online/store"
+  players-table: chisel_lives_players
+  purchases-table: chisel_lives_purchases
+  pool:
+    max-size: 4
+    min-idle: 0
+    connection-timeout-ms: 15000
+    validation-timeout-ms: 5000
+    idle-timeout-ms: 15000
+    max-lifetime-ms: 55000
+    keepalive-ms: 0
+
+leaderboards:
+  refresh-seconds: 600
+  rotating:
+    players:
+      - "Top Players Leaderboard"
+      - "Bounties Update Live"
+      - "Tracked In Real Time"
+    kingdoms:
+      - "Top Kingdoms Leaderboard"
+      - "Power Rankings Live"
+      - "Territory Leaders"
+  pool:
+    max-size: 2
+    min-idle: 0
+    idle-timeout-ms: 15000
+    max-lifetime-ms: 55000
+    keepalive-ms: 0
+  players:
+    world: world
+    x: 0.5
+    y: 100.0
+    z: 0.5
+    yaw: 0.0
+    pitch: 0.0
+  kingdoms:
+    world: world
+    x: 5.5
+    y: 100.0
+    z: 0.5
+    yaw: 0.0
+    pitch: 0.0
+
+messages:
+  no-permission: "&cThis perk requires %rank% rank. Purchase on: &f%store_url%"
+  player-only: "&cOnly players can use this command."
+  portable-no-access: "&cYou do not have access to that portable utility."
+  sit-enter: "&aYou sit down. Use /sit again to stand up."
+  sit-failed: "&cYou cannot sit right now."
+  sit-exit: "&eYou stand up."
+  spawnfly-op-only: "&cOnly operators can use this command."
+  spawnfly-usage: "&eUsage: /spawnfly <pos1|pos2|set|clear|info>"
+  spawnfly-pos1-set: "&aSpawn area pos1 set at &f%world% %x% %y% %z%"
+  spawnfly-pos2-set: "&aSpawn area pos2 set at &f%world% %x% %y% %z%"
+  spawnfly-selection-missing: "&cSet both points first with /spawnfly pos1 and /spawnfly pos2."
+  spawnfly-world-mismatch: "&cBoth positions must be in the same world."
+  spawnfly-region-saved: "&aSpawn area saved in &f%world%&a from &f%min% &ato &f%max%&a. Block changes are now blocked inside it."
+  spawnfly-cleared: "&eSpawn area disabled."
+  spawnfly-info-disabled: "&eSpawn area is currently disabled."
+  spawnfly-info: "&bSpawn area:&f world=%world% min=%min% max=%max%"
+  spawnfly-access-blocks: "&cGet out of spawn to access blocks."
+  spawnbreak-usage: "&eUsage: /spawnbreak <on|off|info>"
+  spawnbreak-on: "&aSpawn break protection for operators is now ON. Ops cannot build in spawn."
+  spawnbreak-off: "&eSpawn break protection for operators is now OFF. Ops can bypass spawn build protection."
+  spawnbreak-info: "&bSpawn break protection for operators: &f%state%"
+  spawn-not-set: "&cSpawn has not been set yet. Use /setspawn first."
+  setspawn-success: "&aSpawn point set at &f%world% %x% %y% %z%&a."
+  spawn-teleport-start: "&eStand still for 5 seconds to teleport to spawn."
+  spawn-teleport-cancelled: "&cSpawn teleport cancelled because you moved."
+  spawn-teleport-success: "&aTeleported to spawn."
+  spawnnpc-op-only: "&cOnly operators can use this command."
+  spawnnpc-usage: "&eUsage: /spawnranksnpc <skinname>"
+  spawnnpc-created: "&aRank NPC spawned using skin &f%skin% &ain world &f%world%&a."
+  rank-updated: "&aYour ChiselRanks rank is now &f%rank%&a."
+  staff-role-updated: "&aYour staff role is now &f%role%&a."
+  staff-no-access: "&cYou do not have access to that staff command."
+  staff-vanish-no-access: "&cHelpers cannot use vanish."
+  staff-vanish-usage: "&eUsage: /vanish [on|off]"
+  staff-mode-enabled: "&aStaff mode enabled."
+  staff-mode-disabled: "&eStaff mode disabled."
+  staff-vanish-enabled: "&aVanish enabled."
+  staff-vanish-disabled: "&eVanish disabled."
+  staff-chat-usage: "&eUsage: /sc <message>"
+  staff-chat-toggle-on: "&aStaff chat toggled on."
+  staff-chat-toggle-off: "&eStaff chat toggled off."
+  staff-chat-format: "&8[&3Staff&8] &b[%role%] &f%player% &8» &7%message%"
+  freeze-usage: "&eUsage: /freeze <player>"
+  freeze-enabled: "&aFrozen &f%player%&a."
+  freeze-disabled: "&eUnfroze &f%player%&e."
+  freeze-notice: "&cYou have been frozen by staff. Do not move or log out."
+  freeze-release: "&aYou have been unfrozen by staff."
+  freeze-command-blocked: "&cYou cannot use commands while frozen."
+  staff-cooldown: "&eThat action is on cooldown."
+  staff-target-not-found: "&cPlayer not found: &f%player%"
+  staff-cannot-target: "&cYou cannot target that player."
+  staff-tp-usage: "&eUsage: /tp <player>"
+  staff-tphere-usage: "&eUsage: /tphere <player>"
+  staff-tp-success: "&aTeleported to &f%player%&a."
+  staff-tphere-success: "&aSummoned &f%player%&a."
+  staff-tphere-target: "&eA staff member teleported you."
+  staff-back-empty: "&cNo previous location saved."
+  staff-back-success: "&aReturned to your previous location."
+  kick-usage: "&eUsage: /kick <player> [reason]"
+  kick-success: "&aKicked &f%player%&a."
+  ban-usage: "&eUsage: /ban <player> [reason]"
+  ban-success: "&aBanned &f%player%&a."
+  unban-usage: "&eUsage: /unban <player>"
+  unban-success: "&aUnbanned &f%player%&a."
+  invsee-usage: "&eUsage: /invsee <player>"
+  ecsee-usage: "&eUsage: /ecsee <player>"
+  ecsee-opened: "&aOpened &f%player%&a's ender chest."
+  report-usage: "&eUsage: /report <player> <hacks|killaura|fly|xray|dupe|nbt|griefing|abuse|chat|bug|other> [details]"
+  report-invalid-reason: "&cUse one of: hacks, killaura, fly, xray, dupe, nbt, griefing, abuse, chat, bug, other."
+  report-submitted: "&aReport submitted. ID: &f%id%"
+  report-notify: "&c[Report] &f%reporter% reported %target%: %reason%"
+  report-closed: "&aClosed report &f#%id%&a."
+  announce-usage: "&eUsage: /announce <message>"
+  announce-sent: "&aGlobal announcement sent."
+  staffannounce-usage: "&eUsage: /staffannounce <message>"
+  staffannounce-sent: "&aStaff announcement sent."
+  announce-no-targets: "&cNo players matched that announcement audience."
+  lockvillagers-usage: "&eUsage: /lockvillagers <on|off|status>"
+  lockvillagers-on: "&aVillager trade lock enabled for armourers and toolsmiths."
+  lockvillagers-off: "&eVillager trade lock disabled."
+  lockvillagers-status: "&bVillager trade lock: &f%state%"
+  lockvillagers-blocked: "&cTrading with armourers and toolsmiths is currently locked."
+  staff-role-usage: "&eUsage: /staffrole <player> <owner|admin|srmod|mod|helper|none>"
+  staff-role-set: "&aSet &f%player%&a to &f%role%&a."
+
+store:
+  url: "https://chiselcraft.online/store"
+  rank-pages:
+    gold: "https://chiselcraft.online/store/gold"
+    diamond: "https://chiselcraft.online/store/diamond"
+    netherite: "https://chiselcraft.online/store/netherite"
+
+discord:
+  enabled: true
+  webhook-url: "https://discord.com/api/webhooks/1484201726113349672/0DCfdngJYKssvhg3Cr9VwAprjtrt5LQgJrS-tGwscl8emoNc5SSAeHz3zEtzgJebtU1K"
+  username: "ChiselBot"
+  avatar-url: ""
+  log-staff: true
+  log-store: true
+  log-revival: true
+
+wiki:
+  url: "https://chiselcraft.online/wiki"
+
+skin-providers:
+  mineskin:
+    upload-endpoint: "https://api.mineskin.org/generate/upload"
+    api-key: ""
+    visibility: "public"
+
+webhook:
+  enabled: true
+  host: 0.0.0.0
+  port: 8765
+  path: /ranks/webhook
+  secret-header: X-ChiselRanks-Secret
+  secret: "ChiselRanksWebhook_9R4J2K7NQ1"
+  default-action: grant
+
+website-sync:
+  enabled: false
+  host: 0.0.0.0
+  port: 52517
+  base-path: /sync
+  cors-allow-origin: "https://chiselcraft.online"
+  purchase-secret-header: X-Chisel-Store-Secret
+  purchase-secret: "ChiselCraftSecureStore_8F39XK19Q2"
+
+promotion:
+  enabled: true
+  interval-minutes: 20
+
+villager-lock:
+  enabled: false
+
+chat:
+  prefix:
+    default: ""
+    gold: "&6[GOLD] "
+    diamond: "&b[DIAMOND] "
+    netherite: "&8[NETHERITE] "
+  staff-prefix:
+    helper: "&a[HELPER] "
+    mod: "&2[MOD] "
+    srmod: "&3[SRMOD] "
+    admin: "&c[ADMIN] "
+    owner: "&4[OWNER] "
+
+join-messages:
+  diamond: "&b[Diamond] &f%player% has entered the realm."
+  netherite: "&5[Netherite] &d%player% forged a grand entrance."
+
+leave-messages:
+  diamond: "&b[Diamond] &f%player% left the server."
+  netherite: "&5[Netherite] &d%player% vanished into the void."
+
+death-messages:
+  netherite: "&5[Netherite] &d%player% has fallen in legendary fashion."
+
+spawn-flight:
+  enabled: false
+  require-netherite: false
+  block-ops: true
+  world: world
+  min:
+    x: 0
+    y: 0
+    z: 0
+  max:
+    x: 0
+    y: 255
+    z: 0
+
+spawn-point:
+  world: world
+  x: 0.5
+  y: 64.0
+  z: 0.5
+  yaw: 0.0
+  pitch: 0.0
+
+rank-npc:
+  enabled: false
+  world: world
+  x: 0.0
+  y: 64.0
+  z: 0.0
+  yaw: 0.0
+  pitch: 0.0
+  skin: Steve

@@ -1,0 +1,20 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.beyondminer:KingdomsBounty >-------------------
+[INFO] Building KingdomsBounty 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from papermc: https://repo.papermc.io/repository/maven-public/io/papermc/paper/paper-api/1.21.1-R0.1-SNAPSHOT/maven-metadata.xml
+Progress (1): 2.4 kB                    Downloaded from papermc: https://repo.papermc.io/repository/maven-public/io/papermc/paper/paper-api/1.21.1-R0.1-SNAPSHOT/maven-metadata.xml (2.4 kB at 935 B/s)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ KingdomsBounty ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ KingdomsBounty ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.449 s
+[INFO] Finished at: 2026-03-16T17:17:17+05:30
+[INFO] ------------------------------------------------------------------------

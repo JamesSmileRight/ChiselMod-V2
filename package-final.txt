@@ -1,0 +1,55 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.beyondminer:KingdomsBounty >-------------------
+[INFO] Building KingdomsBounty 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ KingdomsBounty ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ KingdomsBounty ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ KingdomsBounty ---
+[INFO] skip non existing resourceDirectory C:\Users\James\OneDrive\Desktop\Mods For CSMP\ChiselMod\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ KingdomsBounty ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.2:test (default-test) @ KingdomsBounty ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ KingdomsBounty ---
+[INFO] Building jar: C:\Users\James\OneDrive\Desktop\Mods For CSMP\ChiselMod\target\KingdomsBounty-1.0.0.jar
+[INFO] 
+[INFO] --- shade:3.5.3:shade (default) @ KingdomsBounty ---
+[INFO] Including org.slf4j:slf4j-api:jar:2.0.9 in the shaded jar.
+[INFO] Including org.xerial:sqlite-jdbc:jar:3.46.0.0 in the shaded jar.
+[INFO] Including com.zaxxer:HikariCP:jar:5.1.0 in the shaded jar.
+[INFO] Including com.mysql:mysql-connector-j:jar:8.4.0 in the shaded jar.
+[INFO] Including com.google.protobuf:protobuf-java:jar:3.25.1 in the shaded jar.
+[INFO] Including com.google.code.gson:gson:jar:2.11.0 in the shaded jar.
+[INFO] Including com.google.errorprone:error_prone_annotations:jar:2.27.0 in the shaded jar.
+[WARNING] Discovered module-info.class. Shading will break its strong encapsulation.
+[WARNING] mysql-connector-j-8.4.0.jar, sqlite-jdbc-3.46.0.0.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/services/java.sql.Driver
+[WARNING] HikariCP-5.1.0.jar, KingdomsBounty-1.0.0.jar, error_prone_annotations-2.27.0.jar, gson-2.11.0.jar, mysql-connector-j-8.4.0.jar, protobuf-java-3.25.1.jar, slf4j-api-2.0.9.jar, sqlite-jdbc-3.46.0.0.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/MANIFEST.MF
+[WARNING] error_prone_annotations-2.27.0.jar, gson-2.11.0.jar, slf4j-api-2.0.9.jar, sqlite-jdbc-3.46.0.0.jar define 1 overlapping classes: 
+[WARNING]   - META-INF.versions.9.module-info
+[WARNING] maven-shade-plugin has detected that some files are
+[WARNING] present in two or more JARs. When this happens, only one
+[WARNING] single version of the file is copied to the uber jar.
+[WARNING] Usually this is not harmful and you can skip these warnings,
+[WARNING] otherwise try to manually exclude artifacts based on
+[WARNING] mvn dependency:tree -Ddetail=true and the above output.
+[WARNING] See https://maven.apache.org/plugins/maven-shade-plugin/
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing C:\Users\James\OneDrive\Desktop\Mods For CSMP\ChiselMod\target\KingdomsBounty-1.0.0.jar with C:\Users\James\OneDrive\Desktop\Mods For CSMP\ChiselMod\target\KingdomsBounty-1.0.0-shaded.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  21.943 s
+[INFO] Finished at: 2026-03-22T03:57:10+05:30
+[INFO] ------------------------------------------------------------------------

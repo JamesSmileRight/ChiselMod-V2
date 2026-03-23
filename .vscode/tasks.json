@@ -1,0 +1,47 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build KingdomsBounty",
+			"type": "shell",
+			"command": "..\\maven\\apache-maven-3.9.6\\bin\\mvn.cmd",
+			"args": [
+				"package",
+				"-DskipTests"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "build kingdomsbounty",
+			"type": "shell",
+			"command": "..\\maven\\apache-maven-3.9.6\\bin\\mvn.cmd",
+			"args": [
+				"-DskipTests",
+				"clean",
+				"package"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "package-chiselmod",
+			"type": "shell",
+			"command": "..\\maven\\apache-maven-3.9.6\\bin\\mvn.cmd",
+			"args": [
+				"package",
+				"-DskipTests"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "build kingdomsbounty patched jar",
+			"type": "shell",
+			"command": "..\\maven\\apache-maven-3.9.6\\bin\\mvn.cmd",
+			"args": [
+				"-B",
+				"-DskipTests",
+				"package"
+			],
+			"isBackground": false
+		}
+	]
+}
