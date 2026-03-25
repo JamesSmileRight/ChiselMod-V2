@@ -1,0 +1,810 @@
+================================================================================
+                    CHISELMOD - COMPLETE COMMAND GUIDE
+                    Kingdoms, Bounties, Lives & More
+================================================================================
+
+This guide covers all available commands in the ChiselMod plugin, separated by
+player type: Normal Players and Administrators.
+
+================================================================================
+                              TABLE OF CONTENTS
+================================================================================
+
+1. NORMAL PLAYER COMMANDS
+   - Kingdom Commands
+   - Alliance Commands
+   - Bounty & Hit Requests
+   - War Commands
+   - Lives System
+   - Home & Teleportation
+   - Utility Commands
+   - Portable Workstations
+   - Reporting & Safety
+
+2. ADMINISTRATOR COMMANDS
+   - Staff Mode & Moderation
+   - Inventory Inspection
+   - Punishment Commands
+   - Teleportation Commands
+   - Player Management
+   - Announcements
+   - Statue Management
+   - Leaderboard Commands
+   - Spawn Management
+   - Staff Role Management
+   - Database Commands
+
+================================================================================
+                         NORMAL PLAYER COMMANDS
+================================================================================
+
+─────────────────────────────────────────────────────────────────────────────
+KINGDOM COMMANDS
+─────────────────────────────────────────────────────────────────────────────
+
+Kingdom Help
+  Command: /chiselhelp
+  Description: Display all available player commands for kingdoms, bounties,
+               wars, and lives.
+
+Create a Kingdom
+  Command: /kingdom create <kingdom_name> [color]
+  Example: /kingdom create MyKingdom gold
+  Rules: 
+    - Kingdom name must be 3-16 characters long
+    - Cannot contain spaces
+    - Each player can only create one kingdom
+    - Optional color parameter: gold, aqua, red, green, or hex color (#RRGGBB)
+  Result: You become the kingdom leader
+
+Join a Kingdom
+  Command: /kingdom join [kingdom_name]
+  Description: Accept a pending invite to join a kingdom
+  Note: You must be invited by the kingdom leader first
+
+Leave Kingdom
+  Command: /kingdom leave
+  Description: Leave your current kingdom
+  Warning: You will lose all kingdom benefits
+
+Invite a Player
+  Command: /kingdom invite <player_name>
+  Description: Send an invitation to another player to join your kingdom
+  Note: Only the kingdom leader can invite players
+
+Set Kingdom Capital
+  Command: /kingdom setcapital
+  Description: Set your current location as the kingdom capital
+  Note: Only the kingdom leader can set the capital
+  Warning: Do not set in unsafe locations (water, lava, void)
+
+Teleport to Capital
+  Command: /kingdom capital
+  or /kingdom capital remove (to remove capital)
+  Description: Teleport to your kingdom's capital location
+  Warmup: 5 seconds of standing still required before teleport
+  Cost: Uses your home/capital teleport feature
+
+Kingdom Chat
+  Command: /kingdom chat
+  Alias: /kc
+  Description: Toggle kingdom-only chat mode
+  Effect: Send messages visible only to kingdom members
+  Toggle: Run command again to return to public chat
+
+─────────────────────────────────────────────────────────────────────────────
+ALLIANCE COMMANDS
+─────────────────────────────────────────────────────────────────────────────
+
+Request Alliance
+  Command: /ally request <kingdom_name>
+  or /ally <kingdom_name> (shorthand)
+  Description: Send an alliance request to another kingdom
+  Limit: Maximum 2 allies per kingdom
+  Note: Only kingdom leaders can request alliances
+
+Accept Alliance
+  Command: /ally accept <kingdom_name>
+  Description: Accept an incoming alliance request
+  Effect: Once accepted, both kingdoms are now allies
+  Broadcast: All players see the announcement
+
+Remove Alliance
+  Command: /ally remove <kingdom_name>
+  or /ally delete <kingdom_name>
+  Description: End an alliance with another kingdom
+  Effect: Immediate effect, no reciprocal action needed
+
+List Allies
+  Command: /ally list
+  Description: View all your kingdom's current allies
+  Effect: Shows each allied kingdom name
+
+Show Help
+  Command: /ally help
+  Description: Display alliance command usage
+
+─────────────────────────────────────────────────────────────────────────────
+BOUNTY & HIT REQUEST COMMANDS
+─────────────────────────────────────────────────────────────────────────────
+
+Place Bounty on Player
+  Command: /bounty place player <player_name>
+  Alias: /bounty p player <player_name>
+  Cost: Diamonds in your main hand (5 points per diamond)
+  Example: Hold 10 diamonds, then run command to place 50 point bounty
+  Effect: Bounty posted publicly, increases as more people add to it
+
+Place Bounty on Kingdom
+  Command: /bounty place kingdom <kingdom_name>
+  Cost: Diamonds in your main hand (5 points per diamond)
+  Effect: Entire kingdom members have bounty on them
+
+Check Bounty on Player
+  Command: /bounty check player <player_name>
+  or /bounty check <player_name> (shorthand assumes player)
+  Description: View current bounty value on a player
+
+Check Bounty on Kingdom
+  Command: /bounty check kingdom <kingdom_name>
+  Description: View current bounty value on a kingdom
+
+View Top Bounties
+  Command: /bounty top players
+  Description: See the top 10 players with highest bounties
+
+  Command: /bounty top kingdoms
+  Description: See the top 10 kingdoms with highest bounties
+
+View Active Contracts
+  Command: /bounty contracts
+  Alias: /bounty ct
+  Description: View all active bounty contracts
+  Effect: Opens an inventory menu showing all contracts
+
+Post Hit Request
+  Command: /bounty hit request <player_name>
+  Description: Post a public hit request for another player
+  Note: Contracts must be completed for reputation
+
+Accept Hit Request
+  Command: /bounty hit accept <player_name>
+  Description: Accept someone's hit request
+  Effect: Count as a contract completion when target is killed
+
+List Open Hit Requests
+  Command: /bounty hit list
+  Description: View all open/available hit requests
+
+View Assigned Hits
+  Command: /bounty hit assigned
+  Description: See hit requests you've accepted
+
+Help
+  Command: /bounty help
+  or /bounty tags
+  or /bounty commands
+  Description: Display all bounty commands
+
+─────────────────────────────────────────────────────────────────────────────
+WAR COMMANDS
+─────────────────────────────────────────────────────────────────────────────
+
+Declare War
+  Command: /war declare <kingdom_name>
+  Description: Declare war on another kingdom
+  Requirement: Must be a kingdom leader
+  Effect: Kingdom enters war state with the target
+  Cooldown: War declarations have cooldown periods
+
+Accept War
+  Command: /war accept <kingdom_name>
+  Description: Accept an incoming war declaration
+  Effect: War becomes active between both kingdoms
+
+End War
+  Command: /war end
+  Description: Surrender and end current war
+  Effect: Immediate, requires kingdom leader approval
+
+List Wars
+  Command: /war list
+  Description: View all active wars involving your kingdom
+  Shows: War status, opponent kingdoms, remaining time
+
+Get War Help
+  Command: /war help
+  Description: Display war command usage
+
+─────────────────────────────────────────────────────────────────────────────
+LIVES SYSTEM COMMANDS
+─────────────────────────────────────────────────────────────────────────────
+
+Open Lives Menu
+  Command: /lives
+  Description: Open the lives management GUI
+  Shows: Your current lives, player stats, revival option
+
+Revive a Banned Player
+  Command: /lives revive <player_name>
+  Requirement: Must have a Revival Totem in inventory
+  Effect: Revives the banned player, consumes totem
+  Note: Revival Totem is a crafted item
+
+─────────────────────────────────────────────────────────────────────────────
+HOME & TELEPORTATION COMMANDS
+─────────────────────────────────────────────────────────────────────────────
+
+Set Home
+  Command: /sethome [home_name]
+  Default: /sethome sets home named "home"
+  Example: /sethome farm
+  Effect: Current location saved as teleport point
+  Note: Can set multiple named homes
+
+Teleport to Home
+  Command: /home [home_name]
+  Default: /home returns to "home"
+  Example: /home farm
+  Effect: Teleports you to saved location
+  Requirement: Must stand still for 5 seconds
+
+Delete Home
+  Command: /delhome [home_name]
+  Default: /delhome removes "home"
+  Example: /delhome farm
+  Effect: Permanently deletes the home location
+
+Teleport to Spawn
+  Command: /spawn
+  Warmup: 5 seconds of standing still required
+  Effect: Returns to server spawn point
+  Safe: Anti-void teleport protection
+
+─────────────────────────────────────────────────────────────────────────────
+UTILITY COMMANDS (Rank Perks)
+─────────────────────────────────────────────────────────────────────────────
+
+These commands open portable versions of Minecraft workstations:
+
+Sit Down
+  Command: /sit
+  Requirement: Gold or higher rank
+  Effect: Sit on the ground at current location
+
+Portable Crafting Table
+  Command: /craft
+  Effect: Opens 3x3 crafting menu
+
+Portable Ender Chest
+  Command: /enderchest
+  Alias: /ec
+  Effect: Access your ender chest from anywhere
+
+Portable Anvil
+  Command: /anvil
+  Effect: Repair and rename items
+
+Portable Cartography Table
+  Command: /cartographytable
+  Alias: /cartography
+  Effect: Map cloning and zooming
+  Note: Useful for map crafting
+
+Portable Stonecutter
+  Command: /stonecutter
+  Effect: Cut stone blocks
+
+Portable Workbench
+  Command: /workbench
+  Effect: Smooth stone and wood cutting
+
+Portable Grindstone
+  Command: /grindstone
+  Effect: Repair items without enchantment cost
+
+Portable Loom
+  Command: /loom
+  Effect: Create banners and dye items
+
+─────────────────────────────────────────────────────────────────────────────
+REPORTING & SAFETY COMMANDS
+─────────────────────────────────────────────────────────────────────────────
+
+Report a Player
+  Command: /report <player_name> <reason> [details]
+  
+  Valid Reasons:
+    - hacks       (using cheats/mods)
+    - killaura    (cheating in combat)
+    - fly         (flying illegally)
+    - xray       (seeing through blocks)
+    - dupe        (duplication abuse)
+    - nbt         (NBT tag manipulation)
+    - griefing    (destroying others' builds)
+    - abuse       (player misbehavior)
+    - chat        (chat spam/toxicity)
+    - bug         (found a bug)
+    - other       (anything else)
+  
+  Example: /report PlayerName hacks He's using aimbot
+  Effect: Report sent to staff team immediately
+  Anonymous: Staff can see who reported
+  Follow-up: Staff will investigate
+
+Show Rank Commands
+  Command: /rankhelp
+  Description: Display all rank perk and utility commands
+
+Show Spawn Help
+  Command: /spawnhelp
+  Description: Display spawn-related commands
+
+═════════════════════════════════════════════════════════════════════════════
+                        ADMINISTRATOR COMMANDS
+═════════════════════════════════════════════════════════════════════════════
+
+─────────────────────────────────────────────────────────────────────────────
+STAFF MODE & MODERATION
+─────────────────────────────────────────────────────────────────────────────
+
+Toggle Staff Mode
+  Command: /staff
+  Permission: staff.helper
+  Effect: Enables staff mode with utilities
+  Features: Vanish, no damage, flight, etc.
+  Note: When in staff mode, you're invisible to players
+
+Staff Teleport to Player
+  Command: /staff tp <player_name>
+  Alias: /tp <player_name>
+  Description: Silently teleport to a player for investigations
+
+Staff Chat
+  Command: /sc <message>
+  Description: Send message visible only to staff
+  Note: Useful for staff discussion without player visibility
+
+Toggle Staff Chat Mode
+  Command: /sctoggle
+  Description: All your chat messages go to staff chat
+  Effect: Run again to return to public chat
+
+Freeze a Player
+  Command: /freeze <player_name>
+  Effect: Player cannot move or interact
+  Frozen State: Run /freeze again on same player to unfreeze
+
+Vanish (Invisibility)
+  Command: /vanish [on|off]
+  Effect: Become invisible to players
+  Note: You can still see everyone
+
+─────────────────────────────────────────────────────────────────────────────
+INVENTORY INSPECTION
+─────────────────────────────────────────────────────────────────────────────
+
+View Player Inventory
+  Command: /invsee <player_name>
+  Permission: staff.invsee
+  Effect: Opens player's inventory in read-only mode
+  Logged: All invsee actions are logged for audit
+
+View Player Ender Chest
+  Command: /ecsee <player_name>
+  Permission: staff.invsee
+  Effect: Opens player's ender chest
+  Silent: Player doesn't know they're being viewed
+  Logged: Action recorded in audit log
+
+─────────────────────────────────────────────────────────────────────────────
+PUNISHMENT COMMANDS (Moderation)
+─────────────────────────────────────────────────────────────────────────────
+
+Kick Player
+  Command: /kick <player_name> [reason]
+  Permission: staff.kick
+  Example: /kick PlayerName Griefing base
+  Effect: Player is removed from server
+  Logged: Event recorded in audit log
+  Reason: Optional, defaults to "Kicked by admin"
+  Cooldown: Has cooldown to prevent spam
+
+Ban Player
+  Command: /ban <player_name> [reason]
+  Permission: staff.ban
+  Example: /ban PlayerName Permanent xray
+  Effect: Player cannot join server
+  Duration: Permanent until unbanned
+  Logged: Ban reason recorded
+  Offline: Works on offline players too
+
+Unban Player
+  Command: /unban <player_name>
+  Permission: staff.unban
+  Effect: Player regains access to server
+  History: Ban reason remains in logs
+
+─────────────────────────────────────────────────────────────────────────────
+TELEPORTATION COMMANDS
+─────────────────────────────────────────────────────────────────────────────
+
+Teleport a Player to You
+  Command: /tphere <player_name>
+  Permission: staff.teleport
+  Effect: Target player appears next to you instantly
+
+Return to Previous Location
+  Command: /back
+  Permission: staff.teleport
+  Effect: Returns you to last saved location
+  Uses: Useful after checking on players
+  Cooldown: Small cooldown between uses
+
+Random Staff Teleport
+  Command: /staffrtp
+  Description: Randomly teleport to an online player for investigations
+  Effect: Useful for catching players in problematic areas
+  Security: Helps investigate remote locations
+
+─────────────────────────────────────────────────────────────────────────────
+PLAYER MANAGEMENT
+─────────────────────────────────────────────────────────────────────────────
+
+View Reports
+  Command: /reports
+  Permission: staff.reports
+  Effect: Opens GUI showing all player reports
+  Features: Filter by priority, see report details
+  Action: Click reports to teleport to player location
+
+View Audit Log
+  Command: /auditlog
+  Permission: staff.auditlog
+  Description: View all staff actions taken
+  Shows: Who did what, when, and where
+  Useful: Track admin activity and investigate issues
+
+─────────────────────────────────────────────────────────────────────────────
+ANNOUNCEMENT COMMANDS
+─────────────────────────────────────────────────────────────────────────────
+
+Global Announcement
+  Command: /announce <message>
+  Permission: staff.announce.global
+  Example: /announce Server restarting in 10 minutes
+  Effect: Large title displays for all players with sound
+  Broadcast: Everyone sees the announcement
+
+Staff-Only Announcement
+  Command: /staffannounce <message>
+  Permission: staff.announce.staff
+  Example: /staffannounce New report submitted check /reports
+  Effect: Title displays only for staff members
+  Sound: Special notification sound for staff
+
+─────────────────────────────────────────────────────────────────────────────
+STATUTE MANAGEMENT (NPC & Decorations)
+─────────────────────────────────────────────────────────────────────────────
+
+Create Statue
+  Command: /statue create <type> <id> [skin]
+  Permission: kingdomsbounty.statue.admin
+  Types: ranks, lives, totem, wiki, deco (decorative)
+  Example: /statue create ranks shop1
+  Custom Skin: /statue create ranks shop1 SkinName
+  Skin Types: premium or offline player skins
+
+Remove Statue
+  Command: /statue remove [id]
+  or /statue delete [id]
+  Description: Remove statue by ID or look at it
+  Note: Run without ID to target statue you're looking at
+
+List All Statues
+  Command: /statue list
+  Effect: Shows all spawned statues with IDs and locations
+
+Move Statue
+  Command: /statue movehere [id]
+  Effect: Moves statue to your current location
+  Keeps: Statue properties unchanged
+
+Change Statue Pose
+  Command: /statue pose <id> <pose>
+  Available poses depend on animation type
+  Effect: Changes how statue looks
+
+Statue Animation
+  Command: /statue animate <id> <animation>
+  Options: off, idle, merchant, sentinel, seer
+  Effect: Statue performs animations
+
+Toggle Glow
+  Command: /statue glow <id> <on|off>
+  Effect: Makes statue glow with particles
+
+Toggle Invisibility
+  Command: /statue invisible <id> <on|off>
+  Effect: Hide statue body (show only name/effects)
+
+Toggle Base Plate
+  Command: /statue base <id> <on|off>
+  Effect: Show/hide standing plate under statue
+
+Toggle Hands
+  Command: /statue hands <id> <on|off>
+  Effect: Show/hide statue hands
+
+Rename Statue
+  Command: /statue rename <id> <new_name>
+  Effect: Changes display name above statue
+
+Set Subtitle
+  Command: /statue subtitle <id> <text_or_clear>
+  Effect: Adds subtitle below statue name
+  Clear: /statue subtitle <id> clear (removes subtitle)
+
+Change Statue Skin
+  Command: /statue skin <id> <premium|offline> <value>
+  Format: 
+    - Premium: Player username
+    - Offline: Skin value string
+  Note: Connects to SkinRestorer for advanced skins
+
+Show Statue Info
+  Command: /statue info [id]
+  or look at statue and use /statue info
+  Effect: Shows all statue properties and location
+
+─────────────────────────────────────────────────────────────────────────────
+LEADERBOARD COMMANDS
+─────────────────────────────────────────────────────────────────────────────
+
+Set Top Players Leaderboard Location
+  Command: /leaderboard setplayers
+  Permission: leaderboard.admin
+  Effect: Sets hologram location at your position
+  Usage: Positions the "Top Players" hologram
+
+Set Top Kingdoms Leaderboard Location
+  Command: /leaderboard setkingdoms
+  Permission: leaderboard.admin
+  Effect: Sets hologram location at your position
+  Usage: Positions the "Top Kingdoms" hologram
+
+Refresh Leaderboards
+  Command: /leaderboard refresh
+  Effect: Updates hologram data immediately
+  Usage: Run after database updates
+
+Reload Configuration
+  Command: /leaderboard reload
+  Effect: Reloads plugin config
+  Warning: May cause brief lag
+
+Remove Leaderboards
+  Command: /leaderboard remove players
+  or /leaderboard remove kingdoms
+  or /leaderboard remove all
+  Effect: Deletes specified leaderboards
+
+─────────────────────────────────────────────────────────────────────────────
+SPAWN MANAGEMENT
+─────────────────────────────────────────────────────────────────────────────
+
+Set Spawn Point
+  Command: /setspawn
+  Permission: chiselranks.admin.spawnpoint
+  Effect: Sets exact spawn teleport location
+  Usage: Run at spawn location
+
+Define Protected Spawn Region
+  Command: /spawnfly pos1
+  Sets first corner of spawn protection cuboid
+
+  Command: /spawnfly pos2
+  Sets second corner of spawn protection cuboid
+
+  Command: /spawnfly set
+  Activates the spawn protection region
+
+  Command: /spawnfly clear
+  Removes spawn protection region
+
+  Command: /spawnfly info
+  Shows current spawn region details
+
+Toggle Operator Bypass
+  Command: /spawnbreak <on|off|info>
+  Permission: chiselranks.admin.spawnbreak
+  Effect: Allows/blocks ops from building in spawn
+  Info: Shows current bypass status
+
+─────────────────────────────────────────────────────────────────────────────
+STAFF ROLE MANAGEMENT
+─────────────────────────────────────────────────────────────────────────────
+
+Set Player Staff Role
+  Command: /staffrole <player_name> <role>
+  Permission: staff.staffrole
+  Roles: owner, admin, srmod, mod, helper, none
+  Example: /staffrole PlayerName mod
+  Effect: Assigns internal staff rank and permissions
+  Hierarchy: owner > admin > srmod > mod > helper > none
+
+─────────────────────────────────────────────────────────────────────────────
+VILLAGE LOCKING
+─────────────────────────────────────────────────────────────────────────────
+
+Lock Villager Trades
+  Command: /lockvillagers <on|off|status>
+  Permission: staff.lockvillagers
+  Effect: Prevents armorers and toolsmiths from trading
+  Used for: Preventing early-game gear access via trading
+  Status: /lockvillagers status shows current lock state
+
+─────────────────────────────────────────────────────────────────────────────
+RANK NPC SPAWNING
+─────────────────────────────────────────────────────────────────────────────
+
+Spawn Rank Shop NPC
+  Command: /spawnranksnpc <skin_name>
+  Permission: chiselranks.admin.spawnnpc
+  Skin Name: Any player name for the NPC skin
+  Example: /spawnranksnpc Steve
+  Effect: Spawns NPC at your location for rank shop
+  Note: Uses skin from SkinRestorer if available
+
+═════════════════════════════════════════════════════════════════════════════
+LIVES ADMIN COMMANDS
+═════════════════════════════════════════════════════════════════════════════
+
+Check Player Lives
+  Command: /lives check <player_name>
+  Permission: Limited admin
+  Effect: Shows player's current lives count
+  Displays: Player name, life count, ban status
+
+Give Lives to Player
+  Command: /lives give <player_name> <amount>
+  Permission: Limited admin
+  Effect: Adds specified number of lives
+  Example: /lives give PlayerName 3
+  Usage: Rewards or compensates players
+
+Set Player Lives
+  Command: /lives set <player_name> <amount>
+  Permission: Limited admin
+  Effect: Sets lives to exact amount
+  Example: /lives set PlayerName 5
+  Warning: Overwrites current value
+
+═════════════════════════════════════════════════════════════════════════════
+DATABASE & MAINTENANCE COMMANDS
+═════════════════════════════════════════════════════════════════════════════
+
+Reset Plugin Data
+  Command: /chiselmod reset [hard|seed-online]
+  Permission: kingdomsbounty.admin.reset
+  Warning: DANGEROUS - Deletes all data!
+  Options:
+    - /chiselmod reset hard    (full data wipe)
+    - /chiselmod reset seed-online (seed online players)
+  Backup: Always backup database before using
+
+═════════════════════════════════════════════════════════════════════════════
+                            PERMISSION LEVELS
+═════════════════════════════════════════════════════════════════════════════
+
+PLAYER PERMISSIONS (Default - All Players Have These)
+  - kingdoms.command        - All kingdom commands
+  - bounty.command          - All bounty commands
+  - war.command             - War commands
+  - chisellives.use         - Lives commands
+  - kingdomsbounty.help     - Help commands
+
+STAFF PERMISSIONS (Helpers - Moderators)
+  - staff.helper            - Basic staff commands
+  - staff.invsee            - Inventory inspection
+  - staff.kick              - Kick players
+  - staff.reports           - View player reports
+  - staff.auditlog          - View audit logs
+
+SENIOR STAFF PERMISSIONS (Senior Mods - Admins)
+  - staff.ban               - Ban/unban players
+  - staff.teleport          - Teleportation commands
+  - staff.announce.global   - Global announcements
+  - staff.staffrole         - Assign staff roles
+  - staff.lockvillagers     - Lock trades
+
+ADMIN PERMISSIONS (Operators)
+  - All staff permissions
+  - leaderboard.admin       - Leaderboard management
+  - kingdomsbounty.statue.admin - Statue creation
+  - chiselranks.admin.*     - All rank system admin
+  - kingdomsbounty.admin.* - All plugin admin functions
+
+═════════════════════════════════════════════════════════════════════════════
+                          QUICK REFERENCE GUIDE
+═════════════════════════════════════════════════════════════════════════════
+
+FOR PLAYERS:
+  Main Commands: /chiselhelp
+  Help Topics:   /rankhelp, /spawnhelp, /staffhelp, /statuehelp
+  Socialize:     /kingdom chat (/kc), /ally list
+  Combat:        /bounty place player, /war declare, /bounty hit
+  Admin Reports: /report <player> <reason>
+
+FOR STAFF:
+  Moderation:    /staff, /kick, /ban, /invsee, /freeze
+  Chat:          /sc (staff chat), /sc <message>
+  Teleport:      /tp <player>, /tphere <player>, /back
+  Investigation: /reports, /invsee, /ecsee, /auditlog
+  Control:       /vanish, /staffannounce, /staffrtp
+
+FOR ADMINS:
+  Setup:         /leaderboard, /statue, /setspawn, /spawnfly
+  Management:    /staffrole, /lockvillagers, /spawnranksnpc
+  Control:       /leaderboard refresh, /chiselmod reset
+  Announcements: /announce
+
+═════════════════════════════════════════════════════════════════════════════
+                            TIPS & TRICKS
+═════════════════════════════════════════════════════════════════════════════
+
+KINGDOM TIPS:
+  - Create kingdom early and invite teammates
+  - Set a capital in a safe area for easy returning
+  - Use kingdom chat for strategy without public hearing
+  - Form alliances with friendly kingdoms (max 2 allies)
+
+BOUNTY TIPS:
+  - Place bounties strategically during wars
+  - Check /bounty top to see trending targets
+  - Complete hit contracts for reputation
+  - Hold diamonds to place higher bounties
+
+STAFF TIPS:
+  - Use /staffrtp to find players in remote locations
+  - Check /reports regularly for player submissions
+  - Use /invsee to verify claims in reports
+  - Document everything in /auditlog
+
+ADMIN TIPS:
+  - Move statues with /statue movehere to create scenes
+  - Use different animations for various NPCs
+  - Test all spawn region boundary with /spawnfly info
+  - Backup database before running /chiselmod reset
+
+═════════════════════════════════════════════════════════════════════════════
+                          VERSION INFORMATION
+═════════════════════════════════════════════════════════════════════════════
+
+Plugin Name:    KingdomsBounty (ChiselMod)
+Version:        1.0.0
+API Version:    Paper 1.21.1
+Author:         BeyondMiner
+
+Main Components:
+  - Kingdoms System
+  - Bounty & Assassination Contracts
+  - Kingdom Wars
+  - Lives (Limited Lives) System
+  - Staff Mode & Moderation
+  - Statues & NPCs
+  - Leaderboards
+  - Home System
+  - Rank Perks
+
+Dependencies:
+  - SkinsRestorer (optional - for custom skins)
+  - ProtocolLib (soft dependency)
+  - MySQL Database
+
+═════════════════════════════════════════════════════════════════════════════
+
+For more help, use /chiselhelp in-game or contact server administrators.
+
+Last Updated: 2025
+Document Version: 1.0

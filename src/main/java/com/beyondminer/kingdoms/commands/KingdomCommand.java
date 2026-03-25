@@ -92,6 +92,8 @@ public class KingdomCommand implements CommandExecutor, TabCompleter, Listener {
             case "help":
                 showHelp(player);
                 return true;
+            case "kick":
+                return handleKick(player, args);
             default:
                 player.sendMessage(Component.text("Unknown command. Type ", NamedTextColor.RED)
                         .append(Component.text("/kingdom help", NamedTextColor.GOLD)));

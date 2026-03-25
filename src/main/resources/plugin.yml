@@ -177,6 +177,15 @@ commands:
   staffrole:
     description: Set an internal staff role.
     usage: /staffrole <player> <owner|admin|srmod|mod|helper|none>
+  rank:
+    description: Set or check a player's rank (gold, diamond, netherite).
+    usage: /rank <player> <rank|check> [action]
+    aliases: [setrank, playerrank]
+    permission: chiselranks.rank.set
+  updatetags:
+    description: Refresh name tags and prefixes for all online players.
+    usage: /updatetags
+    permission: chiselranks.updatetags.admin
   rankhelp:
     description: Show the rank perk command list.
     usage: /rankhelp

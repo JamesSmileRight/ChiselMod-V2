@@ -54,6 +54,18 @@ public class ChatListener implements Listener {
                     .append(Component.text("] ", NamedTextColor.GRAY));
         }
 
+        // Add multi-prefix stacking logic
+        String staffRole = chatManager.getStaffRole(player.getUniqueId());
+        String rank = chatManager.getRank(player.getUniqueId());
+
+        if (staffRole != null) {
+            formatted = formatted.append(Component.text("[" + staffRole + "] ", NamedTextColor.RED));
+        }
+
+        if (rank != null) {
+            formatted = formatted.append(Component.text("[" + rank + "] ", NamedTextColor.GOLD));
+        }
+
         return formatted
                 .append(sourceDisplayName)
                 .append(Component.text(": ", NamedTextColor.WHITE))
